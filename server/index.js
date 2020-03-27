@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
-const config = require('./config');
+const cors = require('cors');
+// const config = require('./config');
 
 const app = express();
 
@@ -17,7 +18,7 @@ const app = express();
   });
 
 app.use(express.static('../client/dist'))
-
+app.use(cors());
 app.get('/', (req, res) => {
   res.send('this works')
 });
