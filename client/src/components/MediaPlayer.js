@@ -11,9 +11,9 @@ import Band from '../styled-components/BandName.js';
 import SongStyle from '../styled-components/SongName.js';
 import NameContainer from '../styled-components/SongBandContainer.js';
 
-const MediaPlayer = ({ song, currentSong }) => {
+const MediaPlayer = ({ currentSong }) => {
   const now = moment();
-  const created = moment(song.release_date);
+  const created = moment(currentSong.release_date);
   const timeElapsed = created.from(now);
 
   const [time, setTime] = useState(0);
@@ -21,10 +21,10 @@ const MediaPlayer = ({ song, currentSong }) => {
 
   return (
     <Container>
-      <Image src={song.album_image} />
+      <Image src={currentSong.album_image} />
       <Date_Genre_Style>
         {timeElapsed}<br />
-        {song.music_genre}
+        {currentSong.music_genre}
       </Date_Genre_Style>
       <NameContainer>
         <TogglePlay
@@ -32,8 +32,8 @@ const MediaPlayer = ({ song, currentSong }) => {
           setTime={setTime}
           setDuration={setDuration}
         />
-        <Band>{song.band_name}</Band>
-        <SongStyle>{song.song_name}</SongStyle>
+        <Band>{currentSong.band_name}</Band>
+        <SongStyle>{currentSong.song_name}</SongStyle>
       </NameContainer>
       <ProgressBar
         currentTime={time}
