@@ -1,26 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import axios from 'axios';
-import MediaList from './MediaList.js';
+import MediaPlayer from './MediaPlayer.js';
 
 class MediaFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      songs: [],
       currentSong: []
     }
   }
 
   componentDidMount() {
-    this.getMusic();
-  }
-
-  getMusic() {
-    axios.get('/songs')
+    axios.get('http://localhost:3306/songs')
       .then(music => this.setState({
-        songs: music.data.data,
-        currentSong: music.data.data[music.data.data.length - 1]
+        currentSong: music.data.data[0]
       }))
       .catch(function (error) {
         console.log(error);
@@ -28,11 +22,11 @@ class MediaFeed extends React.Component {
   }
 
   render() {
+    console.log(this.state.currentSong)
     return (
       <div>
         <div>
-          <MediaList
-            songs={this.state.songs}
+          <MediaPlayer
             currentSong={this.state.currentSong}
           />
         </div>
