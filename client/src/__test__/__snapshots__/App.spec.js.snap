@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render snapshot 1`] = `ReactWrapper {}`;
+exports[`MediaFeed should render snapshot 1`] = `ShallowWrapper {}`;
 
-exports[`App snapshot renders 1`] = `ReactWrapper {}`;
+exports[`ProgressBar should render snapshot 1`] = `ShallowWrapper {}`;

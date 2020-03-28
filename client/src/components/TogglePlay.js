@@ -52,7 +52,7 @@ class TogglePlay extends React.Component {
           src={this.props.currentSong.song_url}
           preload="auto">
         </audio>
-        <a onClick={this.toggle}>
+        <a className="toggle" onClick={this.toggle}>
           {this.state.isPlaying ?
             <ButtonStyle
               src={require = (pauseImg)} /> :
