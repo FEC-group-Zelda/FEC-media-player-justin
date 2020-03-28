@@ -17,6 +17,7 @@ class TogglePlay extends React.Component {
   toggle() {
     if (this.state.isLoaded) {
       const myAudio = document.getElementById('myAudio');
+      myAudio.volume = 0.05;
       this.setState({ isPlaying: !this.state.isPlaying }, () => {
         this.state.isPlaying ? myAudio.play() : myAudio.pause();
       });

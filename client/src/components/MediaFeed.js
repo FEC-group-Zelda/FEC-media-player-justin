@@ -12,7 +12,7 @@ class MediaFeed extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://3.21.207.156:3305/songs')
+    axios.get('http://localhost:3306/songs')
       .then(music => this.setState({
         currentSong: music.data.data[0]
       }))
@@ -22,7 +22,6 @@ class MediaFeed extends React.Component {
   }
 
   render() {
-    console.log(this.state.currentSong)
     return (
       <div>
         <div>

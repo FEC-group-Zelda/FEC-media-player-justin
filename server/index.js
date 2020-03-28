@@ -35,6 +35,6 @@ app.get('/songs', (req, res) => {
   });
 });
 
-app.listen(3305, () => {
-  console.log('media server listening on 3305');
+app.listen(3306, () => {
+  console.log('media server listening on 3306');
 })
